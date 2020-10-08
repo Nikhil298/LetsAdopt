@@ -11,21 +11,21 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						
+                        <asp:TextBox ID="email" class="input100" type="text" name="email" placeholder="Email" runat="server"></asp:TextBox>
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
 
 					<div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<asp:TextBox ID="password" class="input100" type="text" name="email" placeholder="Password" runat="server"></asp:TextBox>
+
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
 
 					<div class="container-login100-form-btn m-t-20">
-						<button class="login100-form-btn">
-							Sign in
-						</button>
+                        <asp:Button ID="submit" class="login100-form-btn" runat="server" Text="Submit" />
 					</div>
 
 					<div class="text-center p-t-45 p-b-4">

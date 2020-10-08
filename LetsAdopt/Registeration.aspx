@@ -11,36 +11,31 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<asp:TextBox ID="Name" class="input100" type="text" name="email" placeholder="Name" runat="server"></asp:TextBox>
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
 
 					<div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<asp:TextBox ID="Email" class="input100" type="text" name="email" placeholder="E-mail" runat="server"></asp:TextBox>
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+					<div class="wrap-input100 rs1 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<asp:TextBox ID="password" class="input100" type="text" name="email" placeholder="Password" runat="server"></asp:TextBox>
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+					<div class="wrap-input100 rs1 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<asp:TextBox ID="cpassword" class="input100" type="text" name="email" placeholder="Confirm Password" runat="server"></asp:TextBox>
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
-						<span class="focus-input100-1"></span>
-						<span class="focus-input100-2"></span>
-					</div>
+					
 
 					<div class="container-login100-form-btn m-t-20">
-						<button class="login100-form-btn">
-							Sign in
-						</button>
+                        <asp:Button ID="submit" class="login100-form-btn" runat="server" Text="Submit" />
+						
 					</div>
 
 				
