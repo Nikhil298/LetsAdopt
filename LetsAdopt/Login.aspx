@@ -18,7 +18,7 @@
 					</div>
 
 					<div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
-						<asp:TextBox ID="password" class="input100" type="text" name="email" placeholder="Password" runat="server"></asp:TextBox>
+						<asp:TextBox ID="password" class="input100" type="password" name="psd" placeholder="Password" runat="server"></asp:TextBox>
 
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
