@@ -34,7 +34,7 @@
 					
 
 					<div class="container-login100-form-btn m-t-20">
-                        <asp:Button ID="submit" class="login100-form-btn" runat="server" Text="Submit" />
+                        <asp:Button ID="submit" class="login100-form-btn" runat="server" Text="Submit" OnClick="submit_Click" />
 						
 					</div>
 

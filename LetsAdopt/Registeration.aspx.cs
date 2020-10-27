@@ -13,13 +13,41 @@ namespace LetsAdopt
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if(IsPostBack)
+                {
+               
+            }
             
         }
        
+        protected void submit_Click(object sender, EventArgs e)
+        {
+            MySqlConnection con = new MySqlConnection("server = localhost; Uid = root; password =''; database = letsadopt");
+            con.Open();
 
-        
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            string sql1 = "select count(*) from registration where email='" + Email.Text + "'";
+            MySqlCommand cmd = new MySqlCommand(sql1, con);
+            int t = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+            if (t == 1)
+            {
+                Response.Write("User Already Exist");
+            }
+            
+            else {
+                
+                string sql = "Insert into registration(name,email,password) value('" + Name.Text + "','" + Email.Text + "','" + cpassword.Text + "')";
+                MySqlCommand command = new MySqlCommand(sql, con);
+                adapter.InsertCommand = new MySqlCommand(sql, con);
+                adapter.InsertCommand.ExecuteNonQuery();
+                command.Dispose();
+                con.Close();
+            }
+            
+        }
     }
 }
