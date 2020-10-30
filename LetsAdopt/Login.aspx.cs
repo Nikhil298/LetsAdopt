@@ -23,14 +23,14 @@ namespace LetsAdopt
             MySqlCommand command;
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             String sql = "";
-            sql = "select count(*) from registration where email='" + email.Text + "'";
+            sql = "select count(*) from user where email='" + email.Text + "'";
             command = new MySqlCommand(sql, con);
             int t = Convert.ToInt32(command.ExecuteScalar().ToString());
             if (t == 1)
             {
                 
-                string cpass = "select password from registration where email='" + email.Text + "'";
-                string name= "select name from registration where email = '" + email.Text + "'";
+                string cpass = "select password from user where email='" + email.Text + "'";
+                string name= "select name from user where email = '" + email.Text + "'";
                 MySqlCommand pass = new MySqlCommand(cpass, con);
                 MySqlCommand nm = new MySqlCommand(name, con);
 
@@ -40,7 +40,7 @@ namespace LetsAdopt
                 if (psd == password.Text)
                 {
                     Session["New"] = nms;
-                    Response.Write("welcome "+nms);
+                    Response.Write("welcome "+ Session["New"].ToString());
                 }
                 else
                 {

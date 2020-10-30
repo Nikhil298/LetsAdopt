@@ -30,7 +30,7 @@ namespace LetsAdopt
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            string sql1 = "select count(*) from registration where email='" + Email.Text + "'";
+            string sql1 = "select count(*) from user where email='" + Email.Text + "'";
             MySqlCommand cmd = new MySqlCommand(sql1, con);
             int t = Convert.ToInt32(cmd.ExecuteScalar().ToString());
             if (t == 1)
@@ -40,7 +40,7 @@ namespace LetsAdopt
             
             else {
                 
-                string sql = "Insert into registration(name,email,password) value('" + Name.Text + "','" + Email.Text + "','" + cpassword.Text + "')";
+                string sql = "Insert into user(name,email,password) value('" + Name.Text + "','" + Email.Text + "','" + cpassword.Text + "')";
                 MySqlCommand command = new MySqlCommand(sql, con);
                 adapter.InsertCommand = new MySqlCommand(sql, con);
                 adapter.InsertCommand.ExecuteNonQuery();
