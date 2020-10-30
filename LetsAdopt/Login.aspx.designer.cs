@@ -40,5 +40,19 @@ namespace LetsAdopt
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit;
+
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new LetsAdopt.Master Master
+        {
+            get
+            {
+                return ((LetsAdopt.Master)(base.Master));
+            }
+        }
     }
 }

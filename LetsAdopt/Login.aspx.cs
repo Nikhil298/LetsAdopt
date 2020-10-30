@@ -11,6 +11,7 @@ namespace LetsAdopt
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -18,6 +19,8 @@ namespace LetsAdopt
 
         protected void submit_Click(object sender, EventArgs e)
         {
+            Label mylabelchild = this.Master.MyLabel;
+
             MySqlConnection con = new MySqlConnection("server = localhost; Uid = root; password =''; database = letsadopt");
             con.Open();
             MySqlCommand command;
@@ -40,7 +43,10 @@ namespace LetsAdopt
                 if (psd == password.Text)
                 {
                     Session["New"] = nms;
-                    Response.Write("welcome "+ Session["New"].ToString());
+
+                    mylabelchild.Text = Session["New"].ToString();
+                   
+                    
                 }
                 else
                 {

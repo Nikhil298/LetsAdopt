@@ -13,9 +13,16 @@ namespace LetsAdopt
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            
 
         }
-        
+        public Label MyLabel
+        {
+            get
+            {
+                return this.uname;
+            }
+        }
     }
-}
+ }
+ 
