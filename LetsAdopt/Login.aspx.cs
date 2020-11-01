@@ -34,17 +34,25 @@ namespace LetsAdopt
                 
                 string cpass = "select password from user where email='" + email.Text + "'";
                 string name= "select name from user where email = '" + email.Text + "'";
+                string ud= "select uid from user where email = '" + email.Text + "'";
+                
                 MySqlCommand pass = new MySqlCommand(cpass, con);
                 MySqlCommand nm = new MySqlCommand(name, con);
+                MySqlCommand id = new MySqlCommand(ud, con);
+
+                string usid = id.ExecuteScalar().ToString();
 
                 string psd = pass.ExecuteScalar().ToString();
                 string nms = nm.ExecuteScalar().ToString();
 
+                int uid = Int32.Parse(usid);
+
                 if (psd == password.Text)
                 {
-                    Session["New"] = nms;
+                    Session["name"] = nms;
+                    Session["uid"] = uid;
 
-                    mylabelchild.Text = Session["New"].ToString();
+                    mylabelchild.Text = nms;
                    
                     
                 }
