@@ -5,7 +5,7 @@
     <div class="form-inline">
   <div class="form-group">
     <label for="exampleInputEmail1">image</label>
-        <asp:TextBox ID="image" runat="server" class="form-control"></asp:TextBox>
+      <asp:FileUpload ID="FileUpload1" runat="server" />
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Description</label>

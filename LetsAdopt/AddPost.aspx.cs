@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using MySql.Data.MySqlClient;
+using System.IO;
+using System.Configuration;
+using System.Data;
 
 
 namespace LetsAdopt
@@ -14,8 +17,15 @@ namespace LetsAdopt
         int id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            uid.Text = Session["uid"].ToString();
-             id = int.Parse(uid.Text);
+            if (Session["uid"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                uid.Text = Session["uid"].ToString();
+                id = int.Parse(uid.Text);
+            }
         }
 
         protected void Post_Click(object sender, EventArgs e)
@@ -25,12 +35,19 @@ namespace LetsAdopt
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            string sql1 = "Insert into post(image,des,uid) value('" + image.Text + "','" + des.Text + "','" + id + "')"; 
-            MySqlCommand cmd = new MySqlCommand(sql1, con);
-            adapter.InsertCommand = new MySqlCommand(sql1, con);
-            adapter.InsertCommand.ExecuteNonQuery();
-            cmd.Dispose();
-            con.Close();
+            if (FileUpload1.HasFile)
+            {
+                string fname = FileUpload1.FileName;
+                FileUpload1.PostedFile.SaveAs(Server.MapPath("~/image/" + fname));
+                string ipath = "~/image/" + fname.ToString();
+
+                string sql1 = "Insert into post(image,des,uid) value('" + ipath + "','" + des.Text + "','" + id + "')";
+                MySqlCommand cmd = new MySqlCommand(sql1, con);
+                adapter.InsertCommand = new MySqlCommand(sql1, con);
+                adapter.InsertCommand.ExecuteNonQuery();
+                cmd.Dispose();
+                con.Close();
+            }
         }
     }
 }

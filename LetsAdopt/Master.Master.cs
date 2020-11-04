@@ -23,6 +23,24 @@ namespace LetsAdopt
                 return this.uname;
             }
         }
+
+        public LinkButton MasterPageButtonProperty
+        {
+            get
+            {
+                return MasterPageButton;
+            }
+            set
+            {
+                MasterPageButton = value;
+            }
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
+        }
     }
  }
  

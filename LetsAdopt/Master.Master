@@ -41,7 +41,7 @@
     <script src="js/main.js"></script>
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link href="master.css" rel="stylesheet" />
+    <link href="master.css" rel="stylesheet" type="text/css"/>
     <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -52,18 +52,18 @@
             <nav class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="#">WebSiteName</a>
+                        <a class="navbar-brand" href="#">Lets' Adopt</a>
                     </div>
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
+                        <li class="active"><a href="ViewPost.aspx">Home</a></li>
                         <li><a href="AddPost.aspx">Add Post</a></li>
-                        <li><a href="ViewPost.aspx">View Post</a></li>
+                       
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span><asp:Label ID="uname" runat="server"></asp:Label></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-user" style="margin-right:5px"></span><asp:Label ID="uname" runat="server"></asp:Label></a></li>
                        
-                        
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span></a></li>
+                        <asp:LinkButton ID="MasterPageButton" runat="server"><i class="fa fa-sign-out fa-2x" style="margin-top:10px" aria-hidden="true"></i></asp:LinkButton>
+                            
                     </ul>
                 </div>
             </nav>
@@ -72,11 +72,11 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-        <footer class="footer page-footer font-small blue">
+        <footer class="footer">
             <div class="container">
                <p style="margin-top:20px; color:gray"> <i class="fa fa-copyright"aria-hidden="true"></i> 2020 Let's Adopt</p>
-              
             </div>
+          
         </footer>
     </form>
 </body>

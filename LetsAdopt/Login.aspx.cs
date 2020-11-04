@@ -53,8 +53,8 @@ namespace LetsAdopt
                     Session["uid"] = uid;
 
                     mylabelchild.Text = nms;
-                   
-                    
+
+                    Response.Redirect("ViewPost.aspx");
                 }
                 else
                 {

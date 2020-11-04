@@ -17,7 +17,9 @@ namespace LetsAdopt
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["uid"]==null)
+            Master.MasterPageButtonProperty.Click += MasterPageButton;
+
+            if (Session["uid"]==null)
             {
                 Response.Redirect("Login.aspx");
             }
@@ -28,7 +30,6 @@ namespace LetsAdopt
                 int n = int.Parse(Session["uid"].ToString());
 
                 con.Open();
-
 
                 string sql1 = "select * from post where uid !='" + n + "'";
                 MySqlCommand cmd = new MySqlCommand(sql1, con);
@@ -49,6 +50,12 @@ namespace LetsAdopt
             }
         }
 
+        private void MasterPageButton(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
+        }
+
 
         protected void DataList1_ItemCommand1(object source, DataListCommandEventArgs e)
         {
@@ -57,7 +64,15 @@ namespace LetsAdopt
                  con.Open();
                  string id = e.CommandArgument.ToString();
                  String usrid = Session["uid"].ToString();
-                 string sql = "Insert into response(pid,uid) value('" + id + "','" + usrid + "')";
+
+                string sql1 = "select uid from post where pid='" + id + "'";
+                MySqlCommand cmd = new MySqlCommand(sql1, con);
+                adapter.SelectCommand = new MySqlCommand(sql1, con);
+                int puid = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+                
+                cmd.Dispose();
+
+                string sql = "Insert into response(pid,uid,puid) value('" + id + "','" + usrid + "','"+puid+"')";
                  MySqlCommand command = new MySqlCommand(sql, con);
                  adapter.InsertCommand = new MySqlCommand(sql, con);
                  adapter.InsertCommand.ExecuteNonQuery();
