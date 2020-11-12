@@ -35,7 +35,8 @@ namespace LetsAdopt
                 Response.Write("User Already Exist");
             }
             
-            else {
+            else 
+            {
                 
                 string sql = "Insert into user(name,email,password) value('" + Name.Text + "','" + Email.Text + "','" + cpassword.Text + "')";
                 MySqlCommand command = new MySqlCommand(sql, con);

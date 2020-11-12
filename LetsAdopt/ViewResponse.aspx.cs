@@ -36,5 +36,7 @@ namespace LetsAdopt
             cmd.Dispose();
             con.Close();
         }
+
+        
     }
 }
