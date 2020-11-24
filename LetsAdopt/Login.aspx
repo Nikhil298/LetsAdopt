@@ -29,15 +29,7 @@
                         <asp:Button ID="submit" class="login100-form-btn" runat="server" Text="Submit" OnClick="submit_Click" />
 					</div>
 
-					<div class="text-center p-t-45 p-b-4">
-						<span class="txt1">
-							Forgot
-						</span>
-
-						<a href="#" class="txt2 hov1">
-							Username / Password?
-						</a>
-					</div>
+					
 
 					<div class="text-center">
 						<span class="txt1">

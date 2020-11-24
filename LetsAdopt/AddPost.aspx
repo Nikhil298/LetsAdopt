@@ -2,25 +2,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="form-inline">
-  <div class="form-group">
-    <label for="exampleInputEmail1">image</label>
-      <asp:FileUpload ID="FileUpload1" runat="server" />
+  
+   
+  <div style="width:40%;margin-left:30%;margin-top:5%">
+    <asp:Label ID="Label1" runat="server" Text="Image" style="font-size:large"></asp:Label>
+    <asp:FileUpload ID="FileUpload1" runat="server"/>
+      <br />
+    <asp:Label ID="Label2" runat="server" Text="Description" style="font-size:large"></asp:Label>
+      <br/>
+    <asp:TextBox ID="des" runat="server" style="color:black;width:100%;border:2px solid black" TextMode="MultiLine"></asp:TextBox>
+    <asp:TextBox ID="uid" runat="server" Visible="False"></asp:TextBox>
+     <asp:Button ID="Post" runat="server" class="login100-form-btn" Text="Add" OnClick="Post_Click" />
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Description</label>
-    <asp:TextBox ID="des" runat="server" class="form-control"></asp:TextBox>
-  </div>
-  <div class="form-check">
-    <asp:TextBox ID="uid" runat="server" class="form-control"></asp:TextBox>
-  </div>
-     <asp:Button ID="Post" runat="server" Text="Button" OnClick="Post_Click" />
-</div>
-
-
-
-
-
-
+        
+    
 
 </asp:Content>

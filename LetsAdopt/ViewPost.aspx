@@ -13,7 +13,7 @@
                 <asp:Image ID="Image1" runat="server" class="card-img-top" ImageUrl='<%# Eval("image") %>' style="height:150px;width:150px"/>
                     <div class="card-body">
                        <!-- <asp:Label ID="Label4" runat="server" class="card-title" Text='<%# Eval("pid") %>'></asp:Label>-->
-                        <h4 class="card-title"><%# Eval("pid") %></h4> 
+                       <!-- <h4 class="card-title"><%# Eval("pid") %></h4>--> 
                         <!--<asp:Label ID="Label3" runat="server" class="card-text" Text='<%# "des" %>'></asp:Label>-->
                         <h4 class="card-text"><%# Eval("des") %></h4>
                         <asp:Button ID="Button1" runat="server" Text="Intrested" class="btn btn-primary" CommandName="viewdetail" CommandArgument='<%# Eval ("pid") %>'/>

@@ -17,10 +17,14 @@ namespace LetsAdopt
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["uid"]==null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             int n = int.Parse(Session["uid"].ToString());
             con.Open();
 
-            string sql1 = "select * from response where puid ='" + n + "'";
+            string sql1 = "select pid,uid from response where puid ='" + n + "'";
             MySqlCommand cmd = new MySqlCommand(sql1, con);
             adapter.SelectCommand = new MySqlCommand(sql1, con);
             adapter.SelectCommand.ExecuteNonQuery();
@@ -37,6 +41,13 @@ namespace LetsAdopt
             con.Close();
         }
 
-        
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = "Post ID";
+                e.Row.Cells[1].Text = "Responded By";
+            }
+        }
     }
 }

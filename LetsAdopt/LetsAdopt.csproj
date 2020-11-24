@@ -149,6 +149,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\gridview.css" />
     <Content Include="css\main.css" />
     <Content Include="css\util.css" />
     <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.css" />
