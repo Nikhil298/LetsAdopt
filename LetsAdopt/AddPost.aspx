@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   
-   
+   <h3 style="margin-left:47%;margin-bottom:25px;margin-top:25px;font-weight:bold;">Add</h3>
   <div style="width:40%;margin-left:30%;margin-top:5%">
     <asp:Label ID="Label1" runat="server" Text="Image" style="font-size:large"></asp:Label>
     <asp:FileUpload ID="FileUpload1" runat="server"/>

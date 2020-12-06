@@ -11,7 +11,7 @@ namespace LetsAdopt
 {
 
 
-    public partial class WebForm5
+    public partial class UserProfile
     {
 
         /// <summary>
@@ -24,40 +24,13 @@ namespace LetsAdopt
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// Image1 control.
+        /// pno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
-
-        /// <summary>
-        /// name control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label name;
-
-        /// <summary>
-        /// email control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label email;
-
-        /// <summary>
-        /// phone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label phone;
+        protected global::System.Web.UI.WebControls.TextBox pno;
 
         /// <summary>
         /// street control.
@@ -66,7 +39,7 @@ namespace LetsAdopt
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label street;
+        protected global::System.Web.UI.WebControls.TextBox street;
 
         /// <summary>
         /// city control.
@@ -75,7 +48,7 @@ namespace LetsAdopt
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label city;
+        protected global::System.Web.UI.WebControls.TextBox city;
 
         /// <summary>
         /// state control.
@@ -84,16 +57,16 @@ namespace LetsAdopt
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label state;
+        protected global::System.Web.UI.WebControls.TextBox state;
 
         /// <summary>
-        /// pin control.
+        /// zip control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pin;
+        protected global::System.Web.UI.WebControls.TextBox zip;
 
         /// <summary>
         /// country control.
@@ -102,6 +75,15 @@ namespace LetsAdopt
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label country;
+        protected global::System.Web.UI.WebControls.TextBox country;
+
+        /// <summary>
+        /// update control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button update;
     }
 }

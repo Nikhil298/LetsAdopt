@@ -43,6 +43,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link href="master.css" rel="stylesheet" type="text/css"/>
     <link href="css/gridview.css" rel="stylesheet" />
+    <link href="css/contact.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -53,12 +54,13 @@
             <nav class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="#">Lets' Adopt</a>
+                        <a class="navbar-brand" href="ViewPost.aspx">Lets' Adopt</a>
                     </div>
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="ViewPost.aspx">Home</a></li>
                         <li><a href="AddPost.aspx">Add Post</a></li>
                        <li><a href="ViewResponse.aspx">Responses</a></li>
+                        <li><a href="UserProfile.aspx">My Profile</a></li>
                     </ul>
 
                     

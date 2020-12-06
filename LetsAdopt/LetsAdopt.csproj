@@ -149,6 +149,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\contact.css" />
     <Content Include="css\gridview.css" />
     <Content Include="css\main.css" />
     <Content Include="css\util.css" />
@@ -166,6 +167,7 @@
     <Content Include="js\main.js" />
     <Content Include="js\map-custom.js" />
     <Content Include="master.css" />
+    <Content Include="UserProfile.aspx" />
     <Content Include="Web.config" />
     <Content Include="Login.aspx" />
     <Content Include="Registeration.aspx" />
@@ -202,6 +204,13 @@
     </Compile>
     <Compile Include="AddPost.aspx.designer.cs">
       <DependentUpon>AddPost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewPost.aspx.cs">
       <DependentUpon>ViewPost.aspx</DependentUpon>

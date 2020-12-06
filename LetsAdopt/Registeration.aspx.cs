@@ -43,6 +43,13 @@ namespace LetsAdopt
                 adapter.InsertCommand = new MySqlCommand(sql, con);
                 adapter.InsertCommand.ExecuteNonQuery();
                 command.Dispose();
+
+                string sql2 = "Insert into address(email) value('" + Email.Text + "')";
+                MySqlCommand command1 = new MySqlCommand(sql2, con);
+                adapter.InsertCommand = new MySqlCommand(sql2, con);
+                adapter.InsertCommand.ExecuteNonQuery();
+                command1.Dispose();
+
                 con.Close();
             }
             

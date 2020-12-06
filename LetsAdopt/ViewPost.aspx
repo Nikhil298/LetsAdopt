@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:DataList ID="DataList1" runat="server" RepeatColumns="5" RepeatDirection="Horizontal" OnItemCommand="DataList1_ItemCommand1">
+    <asp:DataList ID="DataList1" runat="server" RepeatColumns="7" RepeatDirection="Horizontal" OnItemCommand="DataList1_ItemCommand1">
         
         <ItemTemplate>
 
