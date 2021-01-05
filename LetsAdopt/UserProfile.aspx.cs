@@ -31,7 +31,7 @@ namespace LetsAdopt
             string mail = cmd.ExecuteScalar().ToString();
             gmail = String.Copy(mail);
 
-            string sql1 = "select * from address where email ='" + mail + "'";
+            string sql1 = "select name,email,phone,lane,city,state,zip,country from address where email ='" + mail + "'";
             MySqlCommand cmd1 = new MySqlCommand(sql1, con);
             adapter.SelectCommand = new MySqlCommand(sql1, con);
             adapter.SelectCommand.ExecuteNonQuery();
@@ -48,6 +48,7 @@ namespace LetsAdopt
             con.Close();
 
             Image1.ImageUrl = "illustrations/address.png";
+            CheckBox1.Visible = false;
         }
 
         protected void update_Click(object sender, EventArgs e)
@@ -85,6 +86,7 @@ namespace LetsAdopt
                 city.Text = "";
                 zip.Text = "";
                 country.Text = "";
+                Response.Redirect("UserProfile.aspx");
             }
         }
 
@@ -99,7 +101,7 @@ namespace LetsAdopt
                 e.Row.Cells[5].Text = "State";
                 e.Row.Cells[6].Text = "Pin";
                 e.Row.Cells[7].Text = "Country";
-                e.Row.Cells[8].Text = "Fosterer";
+                //e.Row.Cells[8].Text = "Fosterer";
                 e.Row.Cells[0].Text = "Name";
             }
         }

@@ -43,7 +43,7 @@
                             </div>
                             
                             <div class="form-group row" style="margin-top:80px">
-                                <asp:Label ID="Label1" runat="server" Text="Want to be a fosterer?"></asp:Label>
+                                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                                 <asp:CheckBox ID="CheckBox1" runat="server" />
                                 </div>
 

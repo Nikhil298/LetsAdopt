@@ -53,13 +53,21 @@ namespace LetsAdopt
                     adapter.InsertCommand.ExecuteNonQuery();
                     command.Dispose();
 
-                    string sql2 = "Insert into address(email) value('" + Email.Text + "')";
+                    string sql2 = "Insert into address(name,email) value('"+Name.Text +"','" + Email.Text + "')";
                     MySqlCommand command1 = new MySqlCommand(sql2, con);
                     adapter.InsertCommand = new MySqlCommand(sql2, con);
                     adapter.InsertCommand.ExecuteNonQuery();
                     command1.Dispose();
 
                     con.Close();
+
+                    string sc = "Successfully Registered!";
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + sc + "');", true);
+                    Name.Text = "";
+                    Email.Text = "";
+                    password.Text = "";
+                    cpassword.Text = "";
+
                 }
             }
         }
