@@ -22,37 +22,46 @@ namespace LetsAdopt
        
         protected void submit_Click(object sender, EventArgs e)
         {
-            MySqlConnection con = new MySqlConnection("server = localhost; Uid = root; password =''; database = letsadopt");
-            con.Open();
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-
-            string sql1 = "select count(*) from user where email='" + Email.Text + "'";
-            MySqlCommand cmd = new MySqlCommand(sql1, con);
-            int t = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-            if (t == 1)
+            if (Name.Text=="" || Email.Text == "" || password.Text == "" || cpassword.Text == "" )
             {
-                Response.Write("User Already Exist");
+                string msg = "All fields are mandatory.";
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + msg + "');", true);
+
+
             }
-            
-            else 
+            else
             {
-                
-                string sql = "Insert into user(name,email,password) value('" + Name.Text + "','" + Email.Text + "','" + cpassword.Text + "')";
-                MySqlCommand command = new MySqlCommand(sql, con);
-                adapter.InsertCommand = new MySqlCommand(sql, con);
-                adapter.InsertCommand.ExecuteNonQuery();
-                command.Dispose();
+                MySqlConnection con = new MySqlConnection("server = localhost; Uid = root; password =''; database = letsadopt");
+                con.Open();
 
-                string sql2 = "Insert into address(email) value('" + Email.Text + "')";
-                MySqlCommand command1 = new MySqlCommand(sql2, con);
-                adapter.InsertCommand = new MySqlCommand(sql2, con);
-                adapter.InsertCommand.ExecuteNonQuery();
-                command1.Dispose();
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-                con.Close();
+                string sql1 = "select count(*) from user where email='" + Email.Text + "'";
+                MySqlCommand cmd = new MySqlCommand(sql1, con);
+                int t = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+                if (t == 1)
+                {
+                    Response.Write("User Already Exist");
+                }
+
+                else
+                {
+
+                    string sql = "Insert into user(name,email,password) value('" + Name.Text + "','" + Email.Text + "','" + cpassword.Text + "')";
+                    MySqlCommand command = new MySqlCommand(sql, con);
+                    adapter.InsertCommand = new MySqlCommand(sql, con);
+                    adapter.InsertCommand.ExecuteNonQuery();
+                    command.Dispose();
+
+                    string sql2 = "Insert into address(email) value('" + Email.Text + "')";
+                    MySqlCommand command1 = new MySqlCommand(sql2, con);
+                    adapter.InsertCommand = new MySqlCommand(sql2, con);
+                    adapter.InsertCommand.ExecuteNonQuery();
+                    command1.Dispose();
+
+                    con.Close();
+                }
             }
-            
         }
     }
 }

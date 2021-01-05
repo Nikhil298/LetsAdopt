@@ -17,6 +17,8 @@ namespace LetsAdopt
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Image1.Visible = false;
+
             if (Session["uid"]==null)
             {
                 Response.Redirect("Login.aspx");
@@ -107,6 +109,8 @@ namespace LetsAdopt
                 MySqlCommand cmd5 = new MySqlCommand(sql5, con);
                 adapter.SelectCommand = new MySqlCommand(sql5, con);
                 string path = cmd5.ExecuteScalar().ToString();
+
+                Image1.Visible = true;
                 Image1.ImageUrl = path;
             }
         }

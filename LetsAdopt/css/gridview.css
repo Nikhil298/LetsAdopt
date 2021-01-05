@@ -72,3 +72,22 @@ min-width: 80%;
 .mydatagrid th {
     padding: 5px;
 }
+
+
+.table-condensed tr th {
+    border: 0px solid #6e7bd9;
+    color: white;
+    background-color: #6C63FF;
+}
+
+.table-condensed, .table-condensed tr td {
+    border: 0px solid #000;
+}
+
+tr:nth-child(even) {
+    background: #f8f7ff
+}
+
+tr:nth-child(odd) {
+    background: #fff;
+}

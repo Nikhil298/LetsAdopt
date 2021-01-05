@@ -60,10 +60,10 @@
                         <li class="active"><a href="ViewPost.aspx">Home</a></li>
                         <li><a href="AddPost.aspx">Add Post</a></li>
                        <li><a href="ViewResponse.aspx">Responses</a></li>
+                        <li><a href="MyPost.aspx">My Posts</a></li>
                         <li><a href="UserProfile.aspx">My Profile</a></li>
                     </ul>
 
-                    
 
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class="glyphicon glyphicon-user" style="margin-right:5px"></span><asp:Label ID="uname" runat="server"></asp:Label></a></li>
